@@ -1,14 +1,19 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view/>
   </div>
 </template>
 
-<style>
+<script>
+export default {
+  data () {
+    return {
+      error: false
+    }
+  }
+}
+</script>
+<style lang="css">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -17,16 +22,60 @@
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+.vs-select__input.multiple {
+  padding: 22px !important;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.not-margin {
+  margin: 0px;
+  font-weight: normal;
+  padding: 10px;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.con-form {
+  width: 100%;
+}
+.con-form .flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.con-form .flex a {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+.con-form .flex a:hover {
+  opacity: 1;
+}
+.con-form .vs-checkbox-label {
+  font-size: 0.8rem;
+}
+.con-form .vs-input-content {
+  margin: 10px 0px;
+  width: calc(100%);
+}
+.con-form .vs-input-content .vs-input {
+  width: 100%;
+}
+.footer-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: calc(100%);
+}
+.footer-dialog .new {
+  margin: 0px;
+  margin-top: 20px;
+  padding: 0px;
+  font-size: 0.7rem;
+}
+.footer-dialog .new a {
+  color: rgba(var(--vs-primary), 1) !important;
+  margin-left: 6px;
+}
+.footer-dialog .new a:hover {
+  text-decoration: underline;
+}
+.footer-dialog .vs-button {
+  margin: 0px;
 }
 </style>
